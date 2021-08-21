@@ -120,8 +120,25 @@ body{
 }
 
 
-
 @media screen and (min-width: 320px) {
    
 
+}
+
+#current_time {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Fira Code';
+    font-weight: bold;
+    font-size: 75px;
+}
+
+#current_date {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#current_greeting {
+    font-weight: bold;
+    font-size: 30px;
 }
