@@ -1,15 +1,20 @@
 {
     "name": "Student Web Desk",
-    "description": "Some cool description",
-    "version": "1.0",
+    "description": "A productivity tool for students.",
+    "version": "1.0.0",
     "manifest_version": 2,
     "background": {
         "page": "./Background/background.html",
         "persistent": false
     },
+    "permissions": [
+        "management",
+        "tabs"
+    ],
 
     "browser_action":{      
-        "default_icon": "logo_icon.png"    
+        "default_icon": "logo_icon.png",
+        "default_popup": "./Popup/popup.html"    
     },
 
     "icons": {
