@@ -2,6 +2,7 @@ body{
     margin: 0px;
     background-image: url(background.png);
     background-size: cover;
+    height: 720px;
 }
 
 #body_container{
@@ -9,7 +10,7 @@ body{
     height: 100%;
 
 }
-
+    /*TODO make nav bar fixed. On scroll remain at the top.*/
 .header{
     
     border-bottom: 4px solid rgb(215,244,230);
@@ -21,6 +22,10 @@ body{
 
     display: flex;
     align-items:center;
+
+
+    top: 0;
+    width: 100%;
 }
 
 a{
@@ -108,8 +113,8 @@ a{
 }
 
 .left_box{
-    margin-left: 40px;
-    margin-right: 70px;
+    margin-left: 45px;
+    margin-right: 90px;
     padding-left: 20px;
     width: 19%;
     height: 500px;
@@ -120,10 +125,14 @@ a{
 
 
 .page_image{
-    width: 95%;
-    height: 87%;
-
-    background-color: aliceblue; /* can remove this - it's just for visualization */
+    width: 300px;
+    height: 500px;
+    margin-left: -20px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    object-fit: cover;
+    object-position: 45% 0;
 }
 
 .right_box{
