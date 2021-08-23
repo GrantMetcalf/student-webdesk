@@ -110,6 +110,7 @@ body{
 .greeting_and_buttons button{
     margin-top: 10px;
     border-radius: 25px;
+    border-style: solid;
     width: 130px;
     height: 45px;
 

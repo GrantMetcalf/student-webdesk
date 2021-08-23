@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('new_tab').addEventListener('click', function () {
         var extensionId = chrome.runtime.id;
-        chrome.tabs.create({ url: 'chrome-extension://' + extensionId + '/New Tab/newtab.html' });
+        chrome.tabs.create({ url: 'chrome-extension://' + extensionId + '/NewTab/newtab.html' });
     });
 });
 
