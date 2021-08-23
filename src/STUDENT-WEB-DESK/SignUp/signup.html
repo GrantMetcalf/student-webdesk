@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
+    <script href="signup.js"></script>
+</head>
+
+<body>
+    <div class="header_container">
+        <a href="../New Tab/newtab.html">
+            <div class="logo_box">
+                <img src="../Images/logo_icon.png" id="logo">
+                <h1 id="web_app_name">Student Web Desk</h1>
+            </div>
+        </a>
+    </div>
+    <div id="body_container">
+        <div class="span_header">
+            <h1>Sign Up </h1>
+            <p>Please fill in this form to create an account.</p>
+        </div>
+        <hr />
+        <div class="form_container">
+            <form action="actionpage.php">
+                <div class="form_title">
+                    <h4>Email</h4>
+                    <input class="form_input" type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="form_title">
+                    <h4>Password</h4>
+                    <input class="form_input" type="password" placeholder="Enter Password" required>
+                </div>
+                <div class="form_title">
+                    <h4>Confirm Password</h4>
+                    <input class="form_input" type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form_check">
+                    <label>
+                        <input type="checkbox" name="remember">Remember me
+                    </label>
+                </div>
+            </form>
+
+            <div class="footer_container">
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                <div class="footer_button">
+                    <a href="#"><button type="button">Sign Up</button></a>
+                    <a href="#"><button class="cancel_button" type="submit">Cancel</button></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
