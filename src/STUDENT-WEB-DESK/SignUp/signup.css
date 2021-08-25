@@ -8,6 +8,23 @@ body{
     font-family: 'Fira Code';
 }
 
+form i{
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+footer{
+    opacity: 80%;
+    font-family: 'Roboto';
+    font-size: 12px;
+}
+
+hr{
+    opacity: 50%;
+    border: 1px solid grey;
+    border-radius: 1px;
+}
+
 .modal{
     position: fixed;
     z-index: 1;
@@ -22,11 +39,11 @@ body{
 }
 .modal_container{
     background-color: #fefefe;
-    margin: 5px auto;
+    margin: 1px auto 20px auto;
     padding: 40px;
     border: 0px solid #888;
     border-radius: 16px;
-    width: 60%;
+    width: 50%;
     text-align: center;
 }
 
@@ -36,7 +53,7 @@ body{
 }
 
 input[type=email], input[type=password] {
-    width: 80%;
+    width: 70%;
     padding: 14px;
     margin: 5px 0 0 0;
     display: inline-block;
@@ -49,13 +66,23 @@ input[type=email]:focus, input[type=password]:focus {
     outline: none;
 }
 
+.form_header{
+    margin-top: -15px;
+}
+
+.form_input_container{
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
 .form_check{
     padding-top: 14px;
     padding-bottom: 4px;
 }
 
 .header_container{
-    border-bottom: 4px solid rgb(215,244,230);
+    margin-left: 28%; /* margins to center the header*/
+    margin-top: -20px;
     padding-top: 10px;
     padding-bottom: 15px;
     
@@ -66,7 +93,7 @@ input[type=email]:focus, input[type=password]:focus {
     align-items:center;
 
     top: 0;
-    width: 100%;
+    width: 60%;
 }
 
 a{
@@ -119,6 +146,12 @@ button:hover{
     background-color: #f44336;
 }
 
+.hr_container{
+    opacity: 50%;
+    width: 44%;
+    margin-left: 28%;
+}
+
 .hr_seperator{
     display: flex;
     text-align: center;
@@ -135,6 +168,16 @@ button:hover{
 }
 .hr_seperator:not(:empty)::after{
     margin-left: .25em;
+}
+
+.symbols{
+    font-size: 30px;
+    color: rgb(255, 175, 1);
+}
+
+.back_link{
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 300px) {

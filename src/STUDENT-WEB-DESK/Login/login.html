@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="../SignUp/signup.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
     <script href="signup.js"></script>
 </head>
 
@@ -34,31 +36,27 @@
                 <!-- end form header -->
                 <hr />
                 <!-- form -->
-                <form action="actionpage.php">
+                <div class="form_input_container">
+                    <form action="actionpage.php">
+                        <!-- email -->
+                        <div class="form_title">
+                            <input class="form_input" type="email" placeholder="Email" required>
+                            <i class="bi bi-envelope" id="icon_email"></i>
+                        </div>
+                        <!-- password -->
+                        <div class="form_title">
+                            <input class="form_input" type="password" placeholder="Password" required>
+                            <i class="bi bi-eye-slash" id="toggle_password"></i>
+                        </div>
+                        <!-- remember me -->
+                        <div class="form_check">
+                            <label>
+                                <input type="checkbox" name="remember">Remember me
+                            </label>
+                        </div>
 
-                    <div class="form_title">
-                        <h4>Email</h4>
-                        <input class="form_input" type="email" placeholder="Email" required>
-                    </div>
-
-                    <div class="form_title">
-                        <h4>Password</h4>
-                        <input class="form_input" type="password" placeholder="Password" required>
-                    </div>
-                    <!--show password-->
-                    <div class="form_check">
-                        <label>
-                            <input type="checkbox" name="show_password">Show password
-                        </label>
-                    </div>
-                    <!-- remember me -->
-                    <div class="form_check">
-                        <label>
-                            <input type="checkbox" name="remember">Remember me
-                        </label>
-                    </div>
-
-                </form>
+                    </form>
+                </div>
                 <!-- end form -->
             </div>
             <!-- end form container -->
@@ -69,18 +67,32 @@
                 <div class="footer_button">
                     <a href="#"><button type="submit">Sign In</button></a>
                     <!-- OR -->
-                    <div class="hr_seperator">OR</div>
+                    <div class="hr_container">
+                        <div class="hr_seperator">OR</div>
+                    </div>
                     <!-- OR -->
                     <a href="#"><button type="button">Create New Account</button></a>
                 </div>
                 <!-- end footer buttons -->
                 <!-- OR -->
-                <div class="hr_seperator">OR</div>
+                <div class="hr_container">
+                    <div class="hr_seperator">OR</div>
+                </div>
                 <!-- OR -->
-                <p><a href="#">Go back to Home.</a></p>
-                <!-- go to Home-->
+                <div class="back_link"><span class="symbols">&#9754;</span> <a href="" onclick="goBack()">Go Back</a>.</div>
+                <script>
+                    function goBack(){
+                        window.history.back();
+                    }
+                    </script>
+                <!-- go back -->
             </div>
             <!-- end footer container -->
+            <hr />
+            <!-- copyright -->
+            <footer>
+                <p>Copyright &copy; Student Web Desk. All rights reserved.</p>
+            </footer>
         </div>
         <!-- end modal container -->
     </div>
