@@ -1,55 +1,51 @@
-body{
+body {
     margin: 0px;
     background-image: url(background.png);
     background-size: cover;
     height: 720px;
 }
 
-#body_container{
+#body_container {
     margin: 0px;
     height: 100%;
-
 }
-    /*TODO make nav bar fixed. On scroll remain at the top.*/
-.header{
-    
-    border-bottom: 4px solid rgb(215,244,230);
-    padding-top: 10px;
-    padding-bottom: 15px;
-    
-    font-size: 10px;
-    background-color: rgb(255, 255, 255);
 
-    display: flex;
-    align-items:center;
-
-
+.header {
+    overflow: hidden;
+    position: fixed;
     top: 0;
     width: 100%;
+    border-bottom: 4px solid rgb(215, 244, 230);
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
 }
 
-a{
+a {
     text-decoration: none;
     color: #000;
 }
 
-.logo_box{
+.logo_box {
     margin-left: 20px;
     margin-right: 220px;
     width: fit-content;
-
     display: flex;
-    align-items:center; /* vertical align*/
+    align-items: center;
+    /* vertical align*/
 }
 
-.logo_box img{
+.logo_box img {
     margin: 8px 0px 0px 0px;
     padding: 0px;
     width: 50px;
     height: 50px;
 }
 
-#web_app_name{
+#web_app_name {
     margin: 8px 0px 0px 5px;
     padding: 0px;
     font-size: 25px;
@@ -57,75 +53,71 @@ a{
     font-weight: bold;
 }
 
-#logo{
 
-}
+/* #logo{ 
 
-.menu_icon{
-    
+}  */
+
+.menu_icon {
     margin-right: 50px;
-
     cursor: pointer;
     position: absolute;
     bottom: 660px;
     left: 1450px;
 }
 
-.menu_icon div{
+.menu_icon div {
     width: 35px;
     height: 5px;
     background-color: black;
     margin: 6px 0;
-
 }
 
 .menu_bar {
     margin-top: 8px;
+    float: left;
+    display: block;
+    text-align: center;
 }
-.menu_bar h3{
+
+.menu_bar h3 {
     display: inline;
     margin-right: 30px;
-
     font-family: 'Fira Code';
     font-size: 14px;
     cursor: pointer;
 }
 
-.menu_bar h3:hover{
+.menu_bar h3:hover {
     /* text-decoration: underline; */
     border-bottom: 3px solid black;
 }
 
-#menu_dashboard{
+#menu_dashboard {
     border-bottom: 3px solid black;
 }
 
-.content_pane{
+.content_pane {
     margin: auto;
     margin-top: 70px;
-    /* border: 1px solid red; */ /* i use borders to see where the html elements are before I position them */
-   
+    /*border: 1px solid red;  /* i use borders to see where the html elements are before I position them */
     width: 99%;
-
     font-family: 'Fira Code';
     font-weight: bold;
     display: flex;
 }
 
-.left_box{
+.left_box {
     margin-left: 45px;
     margin-right: 90px;
     padding-left: 20px;
     width: 19%;
     height: 500px;
-
-    background-color: rgb(85,208,156);
+    background-color: rgb(85, 208, 156);
 }
 
-
-
-.page_image{
-    width: 300px;
+.page_image {
+    width: 500px;
     height: 500px;
     margin-left: -20px;
     margin-right: 0px;
@@ -135,14 +127,20 @@ a{
     object-position: 45% 0;
 }
 
-.right_box{
+.content_image {
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    object-fit: cover;
+}
+
+.right_box {
     width: 65%;
     height: 500px;
-
-    background-color: rgb(85,208,156);
+    background-color: rgb(85, 208, 156);
 }
 
-@media screen and (min-width: 320px) {
-   
-
-}
+@media screen and (min-width: 320px) {}
