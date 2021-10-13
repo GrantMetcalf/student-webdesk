@@ -148,6 +148,11 @@ function calendarMain() {
     tdElem1.appendChild(checkboxElem);
     trElem.appendChild(tdElem1);
 
+    // to-do cell or title cell
+    let tdElem2 = document.createElement("td");
+    tdElem2.innerText = inputValue;
+    trElem.appendChild(tdElem2);
+
     // date cell
     let dateElem = document.createElement("td");
     let dateObj = new Date(date);
@@ -164,11 +169,6 @@ function calendarMain() {
     let timeElem = document.createElement("td");
     timeElem.innerText = time;
     trElem.appendChild(timeElem);
-
-    // to-do cell
-    let tdElem2 = document.createElement("td");
-    tdElem2.innerText = inputValue;
-    trElem.appendChild(tdElem2);
 
     // category cell
     let tdElem3 = document.createElement("td");
