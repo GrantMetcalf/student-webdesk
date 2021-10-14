@@ -7,7 +7,8 @@
   <title>Student Web Desk</title>
   <!-- title bar icon -->
   <link rel="icon" href="logo_icon.png" type="image/icon type">
-  <!-- BootStrap -->
+
+  <!-- BootStrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -68,7 +69,8 @@
                 <h3 class="login-heading mb-4">A productivity tool made for students.</h3>
 
                 <!-- Button triggers login modal -->
-                <button id="signupButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
+                <button id="signupButton" type="button" class="btn btn-primary" data-toggle="modal"
+                  data-target="#signupModal">
                   Sign Up
                 </button>
                 <br>
@@ -91,22 +93,24 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form id="loginForm">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          <label for="loginEmail">Email address</label>
+                          <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp"
                             placeholder="Enter email">
                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="loginPassword">Password</label>
+                          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
                         </div>
-                        <div class="form-group form-check">
+
+                        <!-- <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="rememberMe">
                           <label class="form-check-label" for="rememberMe">Remember password</label>
-                        </div>
+                        </div> -->
+
                         <button type="submit" class="btn btn-primary">Login</button>
                       </form>
                     </div>
@@ -126,35 +130,106 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form id="signupForm">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          <label for="signupEmail">Email address</label>
+                          <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp"
                             placeholder="Enter email">
                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                         </div>
+
+                        <!-- <div class="form-group">
+                          <label for="signupUsername">Username</label>
+                          <input type="text" class="form-control" id="signupUsername" aria-describedby="nameHelp"
+                            placeholder="Enter username">
+                          <small id="nameHelp" class="form-text text-muted">A username is reqired to complete your
+                            profile.</small>
+                        </div> -->
+
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="signupPassword">Password</label>
+                          <input type="password" class="form-control" id="signupPassword" min="6" max="10"
+                            placeholder="Password">
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword2">Confirm Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-enter Password">
-                        </div>
+
                         <div class="form-group form-check">
-                          <input type="checkbox" class="form-check-input" id="rememberMe">
-                          <label class="form-check-label" for="rememberMe">Remember password</label>
-                        </div>
-                        <div class="form-group form-check">
-                          <!--
-                    <input type="checkbox" class="form-check-input" id="consentTsandCs" checked>
-                  <label class="form-check-label" for="consentTsandCs">By clicking Sign Up, you agree to our Terms & Conditions.</label>
-                   -->
                           <p>By clicking Sign Up, you agree to our Terms & Conditions.</p>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- sign up alert info modal -->
+              <div class="modal fade" id="alertInfoModal" tabindex="-1" role="dialog"
+                aria-labelledby="alertInfoModalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="alertInfoModalTitle">Congratulations</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div class="alert alert-info" role="alert">
+                        You account has been successfully created!
+                        <small id="alt" class="form-text text-muted">You will be redirected in few seconds. <a
+                            href="NewTab/newtab.html">Click here</a> to get started now.</small>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- login alert info modal -->
+              <div class="modal fade" id="alertInfoModal2" tabindex="-1" role="dialog"
+                aria-labelledby="alertInfoModalTitle2" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="alertInfoModalTitle2">Welcome back!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div class="alert alert-success" role="alert">
+                        You have been successfully logged in!
+                        <small id="alt" class="form-text text-muted">You will be redirected in few seconds. <a
+                            href="NewTab/newtab.html">Click here</a> to get started now.</small>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- alert error modal -->
+              <div class="modal fade" id="alertErrorModal" tabindex="-1" role="dialog"
+                aria-labelledby="alertErrorModalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="alertErrorModalTitle">Error</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div class="alert alert-danger" role="alert">
+                        There was an error encountered. Please try again!
+                        <small id="alt" class="form-text text-muted">Click the x on the corner to close the
+                          window.</small>
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -168,7 +243,7 @@
   </div>
 
 
-  <!-- BootStrap -->
+  <!-- BootStrap & JQuery Scripts -->
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -180,46 +255,164 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
+  <!-- FIREBASE -->
 
-  <!-- <p id="load">Firebase SDK Loading&hellip;</p>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loadEl = document.querySelector('#load');
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-      // // The Firebase SDK is initialized and available here!
-      //
-      // firebase.auth().onAuthStateChanged(user => { });
-      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-      // firebase.firestore().doc('/foo/bar').get().then(() => { });
-      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-      // firebase.messaging().requestPermission().then(() => { });
-      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-      // firebase.analytics(); // call to activate
-      // firebase.analytics().logEvent('tutorial_completed');
-      // firebase.performance(); // call to activate
-      //
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js";
 
-      try {
-        let app = firebase.app();
-        let features = [
-          'auth',
-          'database',
-          'firestore',
-          'functions',
-          'messaging',
-          'storage',
-          'analytics',
-          'remoteConfig',
-          'performance',
-        ].filter(feature => typeof app[feature] === 'function');
-        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-      } catch (e) {
-        console.error(e);
-        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD6cBjkEmTTc7uVNC3sD0RlFgF_9fAPY9g",
+      authDomain: "student-web-desk.firebaseapp.com",
+      databaseURL: "https://student-web-desk-default-rtdb.firebaseio.com",
+      projectId: "student-web-desk",
+      storageBucket: "student-web-desk.appspot.com",
+      messagingSenderId: "97747219553",
+      appId: "1:97747219553:web:fed6cae0333b3eedc02620",
+      measurementId: "G-LT7LDF5MRT"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getFirestore();
+
+    // listen for current user
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        // ...
+        console.log(uid);
+
+        // show alert
+        $("#alertInfoModal2").modal('show');
+
+        // hide after 5 sec
+        setTimeout(function () {
+          $("#alertInfoModal2").modal('hide');
+
+          window.location.href = '/NewTab/newtab.html';
+        }, 5000);
+
+      } else {
+        // User is signed out
+        // ...
       }
     });
-  </script> -->
+
+    //sign up user
+    const signupForm = document.querySelector("#signupForm");
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const signupEmail = signupForm['signupEmail'].value;
+      const signupPassword = signupForm['signupPassword'].value;
+      // const signupUsername = signupForm['signupUsername'].value;
+
+      console.log(signupEmail, signupPassword)
+
+      createUserWithEmailAndPassword(auth, signupEmail, signupPassword).then(userCredential => {
+
+        console.log(userCredential);
+        const user = userCredential.user;
+        console.log(user);
+
+      }).then(() => {
+        // close the signup modal & reset form
+        $("#signupModal").modal('hide');
+        signupForm.reset();
+
+        // sign up success alert
+        $("#alertInfoModal").modal('show');
+
+        // redirect after 5 sec
+        setTimeout(function () {
+          window.location.href = '/NewTab/newtab.html';
+        }, 5000);
+
+      }).catch((error) => {
+        // close window
+        $("#signupModal").modal('hide');
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        // show error
+        $("#alertErrorModal").modal('show');
+
+        // hide after 5 sec
+        setTimeout(function () {
+          $("#alertErrorModal").modal('hide');
+
+          //show form again
+          $("#signupModal").modal('show');
+        }, 5000);
+
+
+      });
+
+    });
+
+    //login user
+    const loginForm = document.querySelector("#loginForm");
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const loginEmail = loginForm['loginEmail'].value;
+      const loginPassword = loginForm['loginPassword'].value;
+
+      console.log(loginEmail, loginPassword);
+
+      signInWithEmailAndPassword(auth, loginEmail, loginPassword).then(userCredential => {
+        console.log(userCredential);
+        const user = userCredential.user;
+
+        console.log(user);
+      }).then(() => {
+        $("#loginModal").modal('hide');
+        signupForm.reset();
+
+        // login success alert
+        $("#alertInfoModal2").modal('show');
+
+        // redirect after 5 sec
+        setTimeout(function () {
+          window.location.href = '/NewTab/newtab.html';
+        }, 5000);
+
+      }).catch((error) => {
+        // close window
+        $("#loginModal").modal('hide');
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        // show error
+        $("#alertErrorModal").modal('show');
+
+        // hide after 5 sec
+        setTimeout(function () {
+          $("#alertErrorModal").modal('hide');
+        }, 5000);
+
+      });
+
+    });
+
+  </script>
+
+  <!-- authentication-->
+  <script src="auth.js">S</script>
+
 </body>
 
 </html>

@@ -27,7 +27,7 @@ function setCurrentDateTime() {
     }
 
     document.getElementById('current_time').innerText = hour + ":" + minutes + ":" + seconds + " " + dayPeriod;
-    document.getElementById('current_greeting').innerText = greeting + ", Joe.";
+    document.getElementById('current_greeting').innerText = greeting;
 
     setTimeout(function () { setCurrentDateTime() }, 1000);
 }
