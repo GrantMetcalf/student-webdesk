@@ -8,7 +8,7 @@
     <!-- title bar icon -->
     <link rel="icon" href="../logo_icon.png" type="image/icon type">
 
-    <!-- Font Awesom Icon-->
+    <!-- Font Awesome Icon-->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <!-- BootStrap CSS -->
@@ -57,18 +57,19 @@
                 console.log(loggedInUser);
 
                 $("#userInfoEmail").text(loggedInUser);
+                $("#userCard").show();
                 $("#logoutButton").show();
             } else {
                 // User is signed out
                 // ...
-                $("#alertErrorModal").modal('show');
+                $("#alertInfoModal").modal('show');
 
-                // hide after 5 sec
+                // hide and redirect after 3 sec
                 setTimeout(function () {
-                    $("#alertErrorModal").modal('hide');
+                    $("#alertInfoModal").modal('hide');
 
                     window.location.href = '../index.html';
-                }, 5000);
+                }, 3000);
             }
         });
 
@@ -81,12 +82,12 @@
                 console.log("user logged out");
 
                 // show alert
-                $("#alertErrorModal").modal('show');
+                $("#alertInfoModal").modal('show');
 
-                // hide after 5 sec
+                // hide after 3 sec
                 setTimeout(function () {
-                    $("#alertErrorModal").modal('hide');
-                }, 5000);
+                    $("#alertInfoModal").modal('hide');
+                }, 3000);
 
             });
 
@@ -103,11 +104,13 @@
                 <h1 id="web_app_name">Student Web Desk</h1>
 
             </div>
+
+            <!-- user card -->
             <div id="userCard" class="card bg-light"
-                style="display: block; position: absolute; right: 10%; top: 10px; text-align: center; padding: 5px;">
+                style="display: none; position: absolute; right: 10%; top: 10px; text-align: center; padding: 5px;">
                 <div id="userIcon">
                     <i style="font-size: 24px; color: rgb(85,208,156);" class='fas fa-user-astronaut'></i>
-                     <span style="font-size: 16px;" id="userInfoEmail"></span>
+                    <span style="font-size: 16px;" id="userInfoEmail"></span>
                 </div>
                 
             </div>
@@ -133,20 +136,20 @@
             </div>
         </div>
 
-        <!-- alert error modal -->
-        <div class="modal fade" id="alertErrorModal" tabindex="-1" role="dialog" aria-labelledby="alertErrorModalTitle"
+        <!-- alert info modal -->
+        <div class="modal fade" id="alertInfoModal" tabindex="-1" role="dialog" aria-labelledby="alertInfoModalTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="alertErrorModalTitle">Session ended</h5>
+                        <h5 class="modal-title" id="alertInfoModalTitle">Session ended</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
 
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-info" role="alert">
                             You have been logged out. Please login!
                             <small id="alt" class="form-text text-muted">You will be redirected in few seconds. <a
                                     href="../index.html">Click here</a> to get started now.</small>

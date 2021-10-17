@@ -124,7 +124,7 @@ a{
     width: 95%;
     height: 98%;
     
-    background-color: aliceblue; /* can remove this - it's just for visualization */
+     /* background-color: aliceblue; can remove this - it's just for visualization */
 }
 
 .right_box{
@@ -324,4 +324,18 @@ a{
     font-family: 'Fira Code';
     font-weight: bold;
     border: none;
+  }
+
+  #userCard {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+  }
+
+  #logoutButton {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: .25rem;
   }
