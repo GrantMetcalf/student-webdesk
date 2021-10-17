@@ -8,6 +8,9 @@
     <!-- title bar icon -->
     <link rel="icon" href="../logo_icon.png" type="image/icon type">
 
+    <!-- Font Awesom Icon-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <!-- BootStrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,107 +19,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src=""></script>
-</head>
 
-<body>
-    <div id="body_container">
-        <div class="row header">
-            <div class="logo_box">
-                <img src="../Images/logo_icon.png" id="logo">
-                <h1 id="web_app_name">Student Web Desk</h1>
-
-            </div>
-            <div id="logoutButton" style="display: block; position: absolute; right: 4%; top: 10px;">
-                <button onclick="" class="btn btn-primary">Logout</button>
-            </div>
-        </div>
-
-        <div class="content_pane">
-            <div class="date_and_time">
-                <div id="current_date"></div>
-                <div id="current_time"></div>
-            </div>
-
-            <div class="greeting_and_buttons">
-                <div id="current_greeting"></div> <div id="user_email"></div>
-                <div>
-                    <a href="../Dashboard/dashboard.html"><button class="btn btn-primary">Get Started</button></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- login alert info modal -->
-        <div class="modal fade" id="alertInfoModal2" tabindex="-1" role="dialog" aria-labelledby="alertInfoModalTitle2"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="alertInfoModalTitle2">Welcome back!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="alert alert-success" role="alert">
-                            You have been successfully logged in!
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- alert error modal -->
-        <div class="modal fade" id="alertErrorModal" tabindex="-1" role="dialog"
-        aria-labelledby="alertErrorModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="alertErrorModalTitle">Session ended</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-              <div class="alert alert-danger" role="alert">
-                You have been logged out. Please login!
-                <small id="alt" class="form-text text-muted">You will be redirected in few seconds. <a
-                    href="../index.html">Click here</a> to get started now.</small>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <script src="newtab.js"></script>
-
-    <!-- BootStrap & JQuery Scripts -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
+    <!-- auth -->
     <script type="module">
-        // Import the functions you need from the SDKs you need
+        // Import functions
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
 
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyD6cBjkEmTTc7uVNC3sD0RlFgF_9fAPY9g",
             authDomain: "student-web-desk.firebaseapp.com",
@@ -135,8 +45,7 @@
         // listen for current user
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
+                // User is signed in
                 const uid = user.uid;
                 // ...
                 console.log(uid);
@@ -147,18 +56,11 @@
                 // ...
                 console.log(loggedInUser);
 
-                // show alert
-                $("#alertInfoModal2").modal('show');
-
-                // hide after 5 sec
-                setTimeout(function () {
-                    $("#alertInfoModal2").modal('hide');
-                }, 5000);
-
+                $("#userInfoEmail").text(loggedInUser);
+                $("#logoutButton").show();
             } else {
                 // User is signed out
                 // ...
-                $("#logoutButton").css('display: none;');
                 $("#alertErrorModal").modal('show');
 
                 // hide after 5 sec
@@ -175,7 +77,7 @@
         logoutButton.addEventListener('click', (e) => {
             e.preventDefault();
 
-            auth.signOut().then(()=> {
+            auth.signOut().then(() => {
                 console.log("user logged out");
 
                 // show alert
@@ -191,6 +93,86 @@
         });
 
     </script>
+</head>
+
+<body>
+    <div id="body_container">
+        <div class="row header">
+            <div class="logo_box">
+                <img src="../Images/logo_icon.png" id="logo">
+                <h1 id="web_app_name">Student Web Desk</h1>
+
+            </div>
+            <div id="userCard" class="card bg-light"
+                style="display: block; position: absolute; right: 10%; top: 10px; text-align: center; padding: 5px;">
+                <div id="userIcon">
+                    <i style="font-size: 24px; color: rgb(85,208,156);" class='fas fa-user-astronaut'></i>
+                     <span style="font-size: 16px;" id="userInfoEmail"></span>
+                </div>
+                
+            </div>
+
+            <!--logout button-->
+            <div id="logoutButton" style="display: none; position: absolute; right: 4%; top: 10px;">
+                <button onclick="" class="btn btn-primary">Logout</button>
+            </div>
+        </div>
+
+        <div class="content_pane">
+            <div class="date_and_time">
+                <div id="current_date"></div>
+                <div id="current_time"></div>
+            </div>
+
+            <div class="greeting_and_buttons">
+                <div id="current_greeting"></div>
+                <div id="user_email"></div>
+                <div>
+                    <a href="../Dashboard/dashboard.html"><button class="btn btn-primary">Get Started</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- alert error modal -->
+        <div class="modal fade" id="alertErrorModal" tabindex="-1" role="dialog" aria-labelledby="alertErrorModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="alertErrorModalTitle">Session ended</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="alert alert-danger" role="alert">
+                            You have been logged out. Please login!
+                            <small id="alt" class="form-text text-muted">You will be redirected in few seconds. <a
+                                    href="../index.html">Click here</a> to get started now.</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="newtab.js"></script>
+
+    <!-- BootStrap & JQuery Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
